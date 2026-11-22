@@ -3,7 +3,7 @@
 [![Course](https://img.shields.io/badge/Course-24CI51%20Big%20Data%20Systems-003366.svg)](#)
 [![Program](https://img.shields.io/badge/Program-B.E.%20CSE%20(AI%20%26%20ML)-006699.svg)](#)
 [![Institution](https://img.shields.io/badge/Institution-Ramaiah%20Institute%20of%20Technology-8B0000.svg)](#)
-[![Deliverable](https://img.shields.io/badge/Deliverable-28--Page%20Master%20Monograph%20(PDF%20%26%20DOCX)-2E7D32.svg)](#)
+[![Deliverable](https://img.shields.io/badge/Deliverable-62--Page%20Official%20Monograph%20(PDF%20%26%20DOCX)-2E7D32.svg)](#)
 
 ---
 
@@ -94,9 +94,9 @@ BIG_DATA_PROJECT/
 ├── requirements.txt                                # Python runtime dependencies
 │
 ├── reports/                                        # Master academic deliverables
-│   ├── BIG_DATA_SYSTEMS_CONSOLIDATED_REPORT.pdf    # Master 28-page monograph (print-ready PDF)
-│   ├── BIG_DATA_SYSTEMS_CONSOLIDATED_REPORT.docx   # Master formatted Word document (5.5 MB)
-│   ├── BIG_DATA_SYSTEMS_CONSOLIDATED_REPORT.md     # Synchronized GitHub-flavored markdown report
+│   ├── BIG_DATA_SYSTEMS_CONSOLIDATED_REPORT.pdf    # Master 62-page official monograph (print-ready PDF, report_format.docx standard)
+│   ├── BIG_DATA_SYSTEMS_CONSOLIDATED_REPORT.docx   # Master formatted Word document (5.1 MB, Aptos/Aptos Display typography)
+│   ├── BIG_DATA_SYSTEMS_CONSOLIDATED_REPORT.md     # Synchronized GitHub-flavored markdown report (1,060+ lines)
 │   └── BIG_DATA_SYSTEMS_CONSOLIDATED_REPORT_ARYAN_DESAI.docx # Formatted monograph backup
 │
 ├── docs/                                           # Institutional documentation
@@ -190,9 +190,9 @@ cd ..
 
 | Deliverable | Format | Pages / Length | Description |
 | :--- | :--- | :--- | :--- |
-| **Consolidated Monograph** | PDF | **Exactly 28 Pages** | Print-optimized academic monograph with cover page, setup audits, 5 activities, synthesis matrix, and declaration. |
-| **Master Word Document** | DOCX | 28 Pages | Fully styled native Microsoft Word monograph with custom tables, captions, and callout boxes. |
-| **GitHub Documentation** | Markdown | 620+ Lines | Comprehensive synchronized GitHub-flavored markdown report. |
+| **Consolidated Monograph** | PDF | **Exactly 62 Pages** | Print-optimized academic monograph with cover page, setup audits, 5 activities, synthesis matrix, and declaration. |
+| **Master Word Document** | DOCX | 62 Pages | Fully styled native Microsoft Word monograph matching report_format.docx with custom tables, captions, callouts, and 55 figures. |
+| **GitHub Documentation** | Markdown | 1,060+ Lines | Comprehensive synchronized GitHub-flavored markdown report. |
 | **Data & Result Sets** | CSV / JSON | 15 Datafiles | Complete raw telemetry, Parquet tables, and query execution outputs across all 5 modules. |
 
 ---
