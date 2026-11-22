@@ -67,7 +67,7 @@ All 5 activities are executed with authentic configurations, realistic telemetry
 - **Clinical Telemetry Stream:** Continuous heart rate (BPM) and systolic blood pressure (mmHg) across 5 high-risk ICU beds (`ICU-Bed-01` to `ICU-Bed-05`).
 - **Alert Generation:** Automated compound state alerts classifying cardiac anomalies (`CRITICAL_CARDIAC_ARREST`, `HYPERTENSIVE_CRISIS`, `BRADYCARDIA`) emitted to clinical response sinks.
 
-### 4. Activity 5: E-Commerce Product Catalog Benchmarking & Aggregations with MongoDB
+### 4. Activity 4: E-Commerce Product Catalog Benchmarking & Aggregations with MongoDB
 - **Document Store:** MongoDB Community Edition (`MongoDB 7.0.5`) running on port `27017`.
 - **Schema Design:** 10,000 polymorphic e-commerce documents featuring dynamic variant subdocuments, nested attribute arrays, and audit metadata.
 - **Index Optimization Benchmark:** 
@@ -134,26 +134,19 @@ BIG_DATA_PROJECT/
 │   ├── web_server_logs.parquet                     # Snappy-compressed columnar Parquet (1.8 MB)
 │   └── results/                                    # Athena query results & cost comparison CSVs
 │
-├── visualizations/                                 # Complete visual figures for report
-│   ├── fig_g1_hdfs_daemons.png ... fig_g7_ss_audit.png    # Enterprise platform setup figures (7)
-│   ├── fig_1_1_hdfs_report.png ... fig_1_7_hive_plan.png  # Hive execution figures (7)
-│   ├── fig_2_1_kafka_describe.png ... fig_2_8_alerts.png  # Kafka streaming figures (8)
-│   ├── fig_3_1_flink_producer.png ... fig_3_8_cancel.png  # Flink window figures (8)
-│   ├── fig_4_1_mongo_version.png ... fig_4_7_script.png  # MongoDB indexing figures (7)
-│   ├── fig_5_1_s3_daemon.png ... fig_5_6_finops.png      # Cloud analytics figures (6)
-│   └── activity1_... to activity5_... (10 files)          # 10 High-res analytical charts (300 DPI)
-│
-├── build_professional_report.py                    # Master 28-page PDF & DOCX report compiler
-├── generate_high_legibility_charts.py              # 10 Academic publication charts generator
-├── generate_all_activity_figures.py                # 36 Live activity terminal figures generator
-├── generate_setup_screenshots.py                   # 7 Environment verification figures generator
-├── terminal_snapshot_renderer.py                   # Authentic Windows & WSL2 terminal snapshot engine
-└── capture_all_terminal_executions.py              # Multi-process orchestration suite
+└── visualizations/                                 # Complete visual figures for report
+    ├── fig_g1_hdfs_daemons.png ... fig_g7_ss_audit.png    # Enterprise platform setup figures (7)
+    ├── fig_1_1_hdfs_report.png ... fig_1_7_hive_plan.png  # Hive execution figures (7)
+    ├── fig_2_1_kafka_describe.png ... fig_2_8_alerts.png  # Kafka streaming figures (8)
+    ├── fig_3_1_flink_producer.png ... fig_3_8_cancel.png  # Flink window figures (8)
+    ├── fig_4_1_mongo_version.png ... fig_4_7_script.png  # MongoDB indexing figures (7)
+    ├── fig_5_1_s3_daemon.png ... fig_5_6_finops.png      # Cloud analytics figures (6)
+    └── activity1_... to activity5_... (10 files)          # 10 High-res analytical charts (300 DPI)
 ```
 
 ---
 
-## 🚀 Reproduction & Execution Guide
+## 🚀 Execution Guide
 
 ### Prerequisites
 - Python 3.10+
@@ -165,32 +158,30 @@ BIG_DATA_PROJECT/
 ### Running Individual Pipeline Activities
 ```bash
 # Activity 1: Distributed Batch Warehousing
-cd activity1_hive && python hive_analysis.py && cd ..
+cd activity1_hive
+python generate_hive_data.py
+python hive_analysis.py
+cd ..
 
 # Activity 2: Kafka Streaming Telemetry
-cd activity2_kafka && python traffic_kafka_system.py && cd ..
+cd activity2_kafka
+python traffic_kafka_system.py
+cd ..
 
 # Activity 3: Flink Stateful Patient Monitoring
-cd activity3_flink && python flink_patient_monitoring.py && cd ..
+cd activity3_flink
+python flink_patient_monitoring.py
+cd ..
 
 # Activity 4: MongoDB Catalog Index Benchmarks
-cd activity4_mongodb && python mongodb_ecommerce_catalog.py && cd ..
+cd activity4_mongodb
+python mongodb_ecommerce_catalog.py
+cd ..
 
 # Activity 5: Serverless Cloud Log Analytics & Parquet Optimization
-cd activity5_cloud_analytics && python cloud_log_analytics.py && cd ..
-```
-
-### Rebuilding Visualizations & Master Report
-```bash
-# 1. Regenerate all 10 analytical charts at 300 DPI:
-python generate_high_legibility_charts.py
-
-# 2. Regenerate platform setup and activity terminal snapshots:
-python generate_setup_screenshots.py
-python generate_all_activity_figures.py
-
-# 3. Compile the finalized 28-page Master Academic Monograph:
-python build_professional_report.py
+cd activity5_cloud_analytics
+python cloud_log_analytics.py
+cd ..
 ```
 
 ---
