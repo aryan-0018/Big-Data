@@ -1,0 +1,1014 @@
+\documentclass[12pt,a4paper]{report}
+
+% =========================================================
+% BIG DATA SYSTEMS (24CI51) - PROJECT / SELF-LEARNING REPORT
+% =========================================================
+
+% ---------------- Packages ----------------
+\usepackage[a4paper,top=1.55in,bottom=1in,left=1.25in,right=1in,
+            headheight=75pt,headsep=18pt]{geometry}
+\usepackage{setspace}
+\usepackage{times}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{longtable}
+\usepackage{titlesec}
+\usepackage{tocloft}
+\usepackage{fancyhdr}
+\usepackage{hyperref}
+\usepackage{ragged2e}
+\usepackage{enumitem}
+\usepackage{caption}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{xcolor}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    urlcolor=black,
+    citecolor=black
+}
+
+\onehalfspacing
+\setlength{\parindent}{0.5in}
+\setlength{\parskip}{0pt}
+\justifying
+\setlist[itemize]{leftmargin=*}
+\setlist[enumerate]{leftmargin=*}
+\renewcommand{\arraystretch}{1.2}
+
+% ---------------- Project Details ----------------
+\newcommand{\ProjectTitle}{BIG DATA SYSTEMS: TECHNOLOGY STUDY AND IMPLEMENTATION}
+\newcommand{\CourseCode}{24CI51 -- BIG DATA SYSTEMS}
+\newcommand{\AcademicYear}{2025--2026}
+\newcommand{\Department}{DEPARTMENT OF CSE (ARTIFICIAL INTELLIGENCE \& MACHINE LEARNING)}
+\newcommand{\StudentOne}{[NAME 1]}
+\newcommand{\USNOne}{[USN 1]}
+\newcommand{\GuideOne}{Mr. Subash N}
+\newcommand{\GuideDesignation}{Assistant Professor}
+\newcommand{\HOD}{Dr. Siddesh G M}
+\newcommand{\HODDesignation}{Professor \& Head}
+
+% ---------------- Header/Footer ----------------
+% Keep the institute header image at images/rit_header.png.
+% If the image is unavailable, comment out \RamaiahHeaderImage in the header definitions.
+\newcommand{\RamaiahHeaderImage}{%
+  \includegraphics[width=1\textwidth,height=4cm,keepaspectratio]{images/rit_header.png}%
+}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[C]{\RamaiahHeaderImage}
+\fancyfoot[L]{\small \AcademicYear}
+\fancyfoot[C]{\small Big Data Systems (24CI51)}
+\fancyfoot[R]{\small \thepage}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+\fancypagestyle{plain}{%
+  \fancyhf{}
+  \fancyhead[C]{\RamaiahHeaderImage}
+  \fancyfoot[L]{\small \AcademicYear}
+  \fancyfoot[C]{\small Big Data Systems (24CI51)}
+  \fancyfoot[R]{\small \thepage}
+  \renewcommand{\headrulewidth}{0pt}
+  \renewcommand{\footrulewidth}{0.4pt}
+}
+
+\titleformat{\chapter}[display]
+  {\normalfont\bfseries\centering\Large}
+  {\chaptername\ \thechapter}{10pt}{\Large}
+\titleformat{\section}{\normalfont\bfseries\large}{\thesection}{1em}{}
+\titleformat{\subsection}{\normalfont\bfseries}{\thesubsection}{1em}{}
+
+% ---------------- Reusable report helpers ----------------
+\newcommand{\placeholder}[1]{\textit{[Enter #1 here.]}}
+\newcommand{\activityheading}[2]{%
+  \section{Activity #1: #2}%
+}
+\newcommand{\insertfigure}[3][0.85\textwidth]{%
+\begin{figure}[H]
+    \centering
+    % Replace the filename below with the relevant image.
+    \includegraphics[width=#1]{#2}
+    \caption{#3}
+    \label{fig:#2}
+\end{figure}
+}
+
+\begin{document}
+
+% =========================================================
+% TITLE PAGE
+% =========================================================
+\begin{titlepage}
+\centering
+\thispagestyle{empty}
+
+\vspace*{0.4cm}
+{\bfseries\Large A REPORT ON\\[0.3cm]}
+{\bfseries\LARGE \ProjectTitle\\[0.6cm]}
+
+{\bfseries for the course\\[0.2cm]}
+{\bfseries \CourseCode\\[0.8cm]}
+
+Submitted in partial fulfillment of the academic requirements
+for the course work of\\[0.2cm]
+{\bfseries Bachelor of Engineering\\}
+in\\
+{\bfseries Computer Science and Engineering\\[0.2cm]}
+{\bfseries (Artificial Intelligence \& Machine Learning)\\[0.8cm]}
+
+{\bfseries Submitted by:\\[0.2cm]}
+\StudentOne\ -- \USNOne\\
+[0.8cm]
+
+{\bfseries Under the Guidance of:\\[0.2cm]}
+\GuideOne\\
+\GuideDesignation\\[1.0cm]
+
+{\bfseries M. S. RAMAIAH INSTITUTE OF TECHNOLOGY\\}
+{\bfseries BENGALURU -- 560054\\}
+{\bfseries \AcademicYear}
+
+\end{titlepage}
+
+\pagenumbering{roman}
+\setcounter{page}{1}
+
+% =========================================================
+% CERTIFICATE
+% =========================================================
+\chapter*{CERTIFICATE}
+\addcontentsline{toc}{chapter}{Certificate}
+
+Certified that the report entitled ``\ProjectTitle'' submitted by
+\StudentOne\ -- \USNOne, \StudentTwo\ -- \USNTwo, and
+\StudentThree\ -- \USNThree, bonafide students of M. S. Ramaiah
+Institute of Technology, Bengaluru, is a record of the work carried
+out by them for the course \CourseCode\ during the academic year
+\AcademicYear. The report is submitted in partial fulfillment of the
+academic requirements prescribed by the institute.
+
+\vspace{2.0cm}
+
+\begin{tabularx}{\textwidth}{X X}
+\centering Signature of the Guide &
+\centering\arraybackslash Signature of the HoD\\[0.4cm]
+\centering \GuideOne &
+\centering\arraybackslash \HOD\\
+\centering \GuideDesignation &
+\centering\arraybackslash \HODDesignation\\
+\end{tabularx}
+
+\clearpage
+
+% =========================================================
+% DECLARATION
+% =========================================================
+\chapter*{DECLARATION}
+\addcontentsline{toc}{chapter}{Declaration}
+
+We hereby declare that the report entitled ``\ProjectTitle'' is the
+record of work carried out by us at M. S. Ramaiah Institute of
+Technology, Bengaluru, as part of the course \CourseCode. The work
+presented in this report is prepared by us and has not been submitted
+in part or full for the award of any other degree or diploma.
+
+\vspace{2.0cm}
+
+\begin{tabularx}{\textwidth}{X X}
+Signature & Signature\\[0.4cm]
+\StudentOne & \StudentTwo\\
+\USNOne & \USNTwo\\[1.0cm]
+\multicolumn{2}{l}{Signature:}\\[0.4cm]
+
+\end{tabularx}
+
+\clearpage
+
+% =========================================================
+% ACKNOWLEDGEMENT
+% =========================================================
+\chapter*{ACKNOWLEDGEMENT}
+\addcontentsline{toc}{chapter}{Acknowledgement}
+
+We express our sincere gratitude to the management and Principal of
+M. S. Ramaiah Institute of Technology for providing the facilities
+and support required to complete this work. We thank
+\HOD, Professor \& Head, Department of CSE (Artificial Intelligence
+\& Machine Learning), for the encouragement and guidance provided.
+
+We express our sincere thanks to our course guide, \GuideOne,
+\GuideDesignation, for valuable guidance and suggestions throughout
+the completion of this work. We also thank the faculty members,
+technical staff, friends, and family for their support.
+
+\vspace{1cm}
+\begin{flushright}
+\StudentOne\ -- \USNOne\\
+
+\end{flushright}
+
+\clearpage
+
+% =========================================================
+% ABSTRACT
+% =========================================================
+\chapter*{ABSTRACT}
+\addcontentsline{toc}{chapter}{Abstract}
+
+\placeholder{an abstract describing the purpose of the Big Data Systems
+activities, the five technologies studied, the implementation approach,
+the datasets or simulations used, major observations, and conclusions.
+Mention that synthetic or sample data is used wherever applicable.}
+
+\clearpage
+
+\tableofcontents
+\clearpage
+\listoffigures
+\addcontentsline{toc}{chapter}{List of Figures}
+\clearpage
+\listoftables
+\addcontentsline{toc}{chapter}{List of Tables}
+\clearpage
+
+\pagenumbering{arabic}
+
+% =========================================================
+% CHAPTER 1 - INTRODUCTION
+% =========================================================
+\chapter{INTRODUCTION}
+
+\section{Introduction to Big Data Systems}
+\placeholder{Introduce Big Data, its characteristics, the need for
+distributed storage and processing, and the role of batch processing,
+stream processing, NoSQL databases, and cloud analytics.}
+
+\section{Problem Definition}
+\placeholder{Describe the real-world data-management and analytics
+problems addressed by the five activities: sales analysis, traffic
+monitoring, patient vital-sign stream monitoring, product-catalog
+management, and application-log analytics.}
+
+\section{Objectives}
+\begin{itemize}
+    \item Study the architecture, concepts, and applications of Apache Hive.
+    \item Use Apache Kafka concepts to demonstrate continuous data ingestion.
+    \item Explore Apache Flink for real-time stream processing and alert generation.
+    \item Implement MongoDB document storage, retrieval, updates, and queries.
+    \item Explore a cloud-based platform for large-scale log analytics.
+    \item Analyze outputs and document observations, limitations, and conclusions.
+\end{itemize}
+
+\section{Scope of the Work}
+\placeholder{Describe the scope of the five activities. State the datasets,
+tools, simulations, and environments used. Mention that simulated or
+synthetic data is used where real operational data is unavailable.}
+
+\section{Overview of Activities}
+\begin{table}[H]
+\centering
+\caption{Overview of Big Data Systems Activities}
+\begin{tabularx}{\textwidth}{|c|l|X|}
+\hline
+\textbf{No.} & \textbf{Technology} & \textbf{Application Scenario}\\
+\hline
+1 & Apache Hive & Supermarket sales analysis and inventory insights\\
+\hline
+2 & Apache Kafka & Smart-city traffic data ingestion and congestion alerts\\
+\hline
+3 & Apache Flink & Real-time processing of synthetic patient vital-sign data\\
+\hline
+4 & MongoDB & E-commerce product-catalog storage and retrieval\\
+\hline
+5 & Cloud-Based Big Data Analytics & Application and web-server log analysis\\
+\hline
+\end{tabularx}
+\end{table}
+
+% =========================================================
+% CHAPTER 2 - REQUIREMENT SPECIFICATIONS
+% =========================================================
+\chapter{PROJECT REQUIREMENT SPECIFICATIONS}
+
+\section{Software Requirements}
+\begin{table}[H]
+\centering
+\caption{Software Requirements}
+\begin{tabularx}{\textwidth}{|l|X|}
+\hline
+\textbf{Component} & \textbf{Technology / Requirement}\\
+\hline
+Operating System & [Linux / Windows and version]\\
+\hline
+Programming Language & [Python / Java / other language used]\\
+\hline
+Data Warehousing & Apache Hive and HiveQL\\
+\hline
+Message Streaming & Apache Kafka\\
+\hline
+Stream Processing & Apache Flink\\
+\hline
+NoSQL Database & MongoDB\\
+\hline
+Cloud Analytics & One selected platform: AWS, Microsoft Azure, or Google Cloud\\
+\hline
+Development Tools & [IDE, terminal, notebook, or other tools]\\
+\hline
+Visualization & [Tool/library used, if applicable]\\
+\hline
+\end{tabularx}
+\end{table}
+
+\section{Hardware Requirements}
+\begin{table}[H]
+\centering
+\caption{Hardware Requirements}
+\begin{tabularx}{\textwidth}{|l|X|}
+\hline
+\textbf{Component} & \textbf{Minimum / Available Specification}\\
+\hline
+Processor & [Processor model and speed]\\
+\hline
+RAM & [Available RAM]\\
+\hline
+Storage & [Available disk space]\\
+\hline
+Network & Internet or local network connectivity, as required\\
+\hline
+Additional Hardware & [Mention additional devices, if used]\\
+\hline
+\end{tabularx}
+\end{table}
+
+\section{Functional Requirements}
+\begin{itemize}
+    \item Create Hive tables and execute queries on sales transaction data.
+    \item Publish traffic sensor records to Kafka topics and consume incoming events.
+    \item Process a stream of synthetic patient readings using Flink and identify values outside demonstration thresholds.
+    \item Insert, retrieve, update, search, and delete product documents in MongoDB.
+    \item Upload or access sample server logs using a selected cloud platform and analyze log patterns.
+    \item Generate outputs, alerts, summaries, tables, or visualizations appropriate to each activity.
+\end{itemize}
+
+\section{Non-Functional Requirements}
+\begin{itemize}
+    \item \textbf{Performance:} The solution should process the selected sample data within reasonable time.
+    \item \textbf{Scalability:} The technologies studied should support approaches for handling growing data volumes.
+    \item \textbf{Reliability:} The implementation should produce consistent outputs for the same input data.
+    \item \textbf{Usability:} Queries, scripts, and results should be documented clearly.
+    \item \textbf{Security:} Access credentials and sensitive information should not be exposed in the report.
+    \item \textbf{Cost Awareness:} Cloud usage and estimated resource costs should be documented where applicable.
+\end{itemize}
+
+\section{Data Requirements}
+\begin{table}[H]
+\centering
+\caption{Datasets Required for the Activities}
+\begin{tabularx}{\textwidth}{|l|X|X|}
+\hline
+\textbf{Activity} & \textbf{Dataset / Data Fields} & \textbf{Purpose}\\
+\hline
+Hive & Sales records: transaction ID, date, product, quantity, price, branch & Revenue, product, branch, and monthly sales analysis\\
+\hline
+Kafka & Traffic events: timestamp, junction ID, vehicle count, speed & Continuous ingestion and congestion detection\\
+\hline
+Flink & Synthetic readings: timestamp, patient/device ID, heart rate, oxygen saturation, temperature & Demonstration of stream processing and threshold alerts\\
+\hline
+MongoDB & Product name, category, price, brand, specifications, rating, availability & Product catalog and CRUD operations\\
+\hline
+Cloud Analytics & Sample application/web-server logs, timestamps, status codes, request details & Error frequency, request volume, spikes, and usage patterns\\
+\hline
+\end{tabularx}
+\end{table}
+
+% =========================================================
+% CHAPTER 3 - TECHNOLOGY STUDY AND DESIGN
+% =========================================================
+\chapter{TECHNOLOGY STUDY AND SYSTEM DESIGN}
+
+\section{Overall System Design}
+\placeholder{Describe how the five activities are organized and how input
+data is collected, stored, processed, analyzed, and presented. The activities
+may be implemented independently.}
+
+\begin{figure}[H]
+    \centering
+    % Add the overall architecture diagram in the images folder.
+    % \includegraphics[width=0.90\textwidth]{images/overall_architecture.png}
+    \fbox{\parbox[c][5cm][c]{0.85\textwidth}{\centering
+    Insert Overall Big Data Systems Architecture Diagram}}
+    \caption{Overall Big Data Systems Architecture}
+    \label{fig:overall_architecture}
+\end{figure}
+
+\section{Apache Hive}
+\subsection{Introduction and Architecture}
+\placeholder{Explain Apache Hive, its role in data warehousing, and its
+architecture. Include relevant components such as the user interface,
+driver, compiler, execution engine, metastore, and storage layer, as
+applicable to the environment used.}
+
+\subsection{HiveQL and Data Warehousing Concepts}
+\placeholder{Explain HiveQL, databases, tables, schemas, data types,
+partitions or buckets if used, and the difference between Hive and a
+traditional relational database.}
+
+\subsection{Proposed Hive-Based Sales Analysis}
+\placeholder{Describe how supermarket transaction records are stored in
+Hive and how the data is queried to identify total revenue, best-selling
+products, peak sales hours, branch-wise revenue, and monthly trends.}
+
+\section{Apache Kafka}
+\subsection{Introduction and Architecture}
+\placeholder{Explain Kafka and the roles of brokers, topics, partitions,
+producers, consumers, and consumer groups, as applicable.}
+
+\subsection{Producer-Consumer Model}
+\placeholder{Describe how traffic sensor events are generated, published
+to a Kafka topic, consumed by an application, and processed.}
+
+\subsection{Proposed Traffic Monitoring Design}
+\placeholder{Explain the traffic-event fields and the method used to
+identify congestion using predefined vehicle-count or speed thresholds.}
+
+\section{Apache Flink}
+\subsection{Introduction and Architecture}
+\placeholder{Explain Apache Flink and its stream-processing concepts,
+execution model, data streams, operators, and windows, as applicable.}
+
+\subsection{Real-Time Patient Data Processing}
+\placeholder{Describe the synthetic patient vital-sign stream and the
+processing flow used to identify readings outside the selected
+demonstration thresholds.}
+
+\subsection{Alert Generation and Time-Window Summary}
+\placeholder{Explain how alerts are generated and how abnormal readings
+are summarized over a specified time window. Clearly state that the
+prototype is educational and is not a clinical diagnostic tool.}
+
+\section{MongoDB}
+\subsection{Introduction and Document Model}
+\placeholder{Explain MongoDB, NoSQL databases, JSON-like/BSON documents,
+collections, and the document-oriented data model.}
+
+\subsection{Collections, Indexing, and CRUD Operations}
+\placeholder{Describe the collection structure, indexes used, and
+Create, Read, Update, and Delete operations implemented.}
+
+\subsection{Proposed E-Commerce Product Catalog}
+\placeholder{Explain how product details such as name, category, price,
+brand, specifications, rating, and availability are represented and
+queried.}
+
+\section{Cloud-Based Big Data Analytics}
+\subsection{Cloud Platform Overview}
+\placeholder{Identify the selected platform (AWS, Microsoft Azure, or
+Google Cloud) and introduce the storage and analytics services used.}
+
+\subsection{Storage and Analytics Workflow}
+\placeholder{Describe the selected managed storage and analytics services,
+how the sample server-log dataset is uploaded or accessed, and how the
+data is analyzed.}
+
+\subsection{Log Analytics Design}
+\placeholder{Explain the analysis of error frequencies, request volumes,
+unusual spikes in failed requests, and time-based usage patterns. Include
+the visualization approach and cost considerations.}
+
+% =========================================================
+% CHAPTER 4 - IMPLEMENTATION AND RESULTS
+% =========================================================
+\chapter{IMPLEMENTATION AND RESULTS}
+
+\section{Implementation Environment}
+\placeholder{Mention the operating system, hardware, software versions,
+programming languages, tools, configuration, and execution environment
+used for the activities.}
+
+% ---------------- Activity 1 ----------------
+\activityheading{1}{Apache Hive -- Supermarket Sales Analysis}
+
+\subsection{Problem Statement}
+A supermarket chain generates millions of sales transaction records
+daily. Management wants to identify best-selling products, peak sales
+hours, branch-wise revenue, and monthly sales trends to improve
+inventory planning and business decisions.
+
+\subsection{Self-Learning and Implementation Tasks}
+\begin{enumerate}
+    \item Study Hive architecture, HiveQL, and data warehousing concepts.
+    \item Create Hive tables to store sales transaction data.
+    \item Write queries to calculate total revenue, top-selling products,
+    and branch-wise sales. Include peak-hour and monthly analysis where
+    the dataset contains the required fields.
+    \item Analyze the results and recommend inventory-management strategies.
+\end{enumerate}
+
+\subsection{Dataset and Table Design}
+\placeholder{Describe the sales dataset, source, number of records, fields,
+data types, and Hive database/table schema.}
+
+\subsection{Implementation Procedure}
+\begin{enumerate}
+    \item Configure and start the required Hive environment.
+    \item Create the database and sales table.
+    \item Load or access the sales transaction dataset.
+    \item Execute HiveQL queries for revenue, product, branch, and time-based analysis.
+    \item Save query outputs for interpretation.
+\end{enumerate}
+
+\subsection{HiveQL Queries and Outputs}
+\placeholder{Insert the HiveQL statements used. For each query, explain
+its purpose and include the corresponding output.}
+
+\begin{table}[H]
+\centering
+\caption{Hive Sales Analysis Results}
+\begin{tabularx}{\textwidth}{|X|X|X|}
+\hline
+\textbf{Analysis} & \textbf{Query / Metric} & \textbf{Observation}\\
+\hline
+Total Revenue & [Query or metric] & [Observation]\\
+\hline
+Top-Selling Products & [Query or metric] & [Observation]\\
+\hline
+Branch-Wise Revenue & [Query or metric] & [Observation]\\
+\hline
+Peak Sales Hours & [Query or metric] & [Observation]\\
+\hline
+Monthly Sales Trends & [Query or metric] & [Observation]\\
+\hline
+\end{tabularx}
+\end{table}
+
+\subsection{Results and Business Insights}
+\placeholder{Insert screenshots of table creation, data loading, queries,
+and outputs. Explain the findings and inventory-management recommendations.}
+
+% ---------------- Activity 2 ----------------
+\clearpage
+\activityheading{2}{Apache Kafka -- Real-Time Traffic Monitoring}
+
+\subsection{Problem Statement}
+A smart-city traffic control center receives continuous vehicle-count
+and traffic-speed data from sensors installed at major junctions. It
+needs to identify congestion-prone roads and generate timely alerts for
+traffic operators.
+
+\subsection{Self-Learning and Implementation Tasks}
+\begin{enumerate}
+    \item Study Kafka topics, producers, consumers, and brokers.
+    \item Generate or simulate traffic sensor data and publish it to a Kafka topic.
+    \item Develop a consumer application to process incoming traffic events.
+    \item Identify congestion using predefined speed or vehicle-count thresholds
+    and generate alerts.
+\end{enumerate}
+
+\subsection{Dataset and Kafka Configuration}
+\placeholder{Describe the generated/simulated traffic data, broker
+configuration, topic name, partitions, producer settings, and consumer
+settings used.}
+
+\subsection{Implementation Procedure}
+\begin{enumerate}
+    \item Set up and start the Kafka broker environment.
+    \item Create the traffic-data topic.
+    \item Develop or configure a producer to publish traffic events.
+    \item Develop a consumer to receive and process events.
+    \item Apply the selected congestion thresholds and generate alerts.
+\end{enumerate}
+
+\subsection{Producer and Consumer Code}
+\placeholder{Insert the producer and consumer code, configuration
+commands, and explanations.}
+
+\subsection{Results and Congestion Alerts}
+\begin{table}[H]
+\centering
+\caption{Sample Traffic Monitoring Results}
+\begin{tabularx}{\textwidth}{|l|c|c|X|}
+\hline
+\textbf{Junction} & \textbf{Vehicle Count} & \textbf{Speed} & \textbf{Detected Status}\\
+\hline
+[Junction 1] & [Value] & [Value] & [Normal / Congested]\\
+\hline
+[Junction 2] & [Value] & [Value] & [Normal / Congested]\\
+\hline
+[Junction 3] & [Value] & [Value] & [Normal / Congested]\\
+\hline
+\end{tabularx}
+\end{table}
+\placeholder{Insert screenshots of topic creation, producer messages,
+consumer output, and generated congestion alerts. Explain the observations.}
+
+% ---------------- Activity 3 ----------------
+\clearpage
+\activityheading{3}{Apache Flink -- Real-Time Patient Vital-Sign Monitoring}
+
+\subsection{Problem Statement}
+A hospital monitors patients using connected medical devices that
+continuously transmit heart rate, oxygen saturation, and body temperature
+readings. The hospital wants to process readings in real time and flag
+potentially abnormal values for clinical review.
+
+\subsection{Self-Learning and Implementation Tasks}
+\begin{enumerate}
+    \item Study Flink architecture and stream-processing concepts.
+    \item Simulate a continuous stream of patient vital-sign readings.
+    \item Develop a Flink application to identify readings outside predefined
+    demonstration thresholds.
+    \item Generate alerts and summarize abnormal readings over a specified
+    time window.
+\end{enumerate}
+
+\subsection{Dataset and Demonstration Thresholds}
+\placeholder{Describe the synthetic data fields, data-generation method,
+and demonstration thresholds used for heart rate, oxygen saturation,
+and body temperature. State the source or rationale for the educational
+thresholds.}
+
+\subsection{Implementation Procedure}
+\begin{enumerate}
+    \item Configure the Flink execution environment.
+    \item Generate or read the synthetic patient vital-sign stream.
+    \item Define the stream-processing operations.
+    \item Apply the selected demonstration thresholds.
+    \item Generate alert records and time-window summaries.
+\end{enumerate}
+
+\subsection{Flink Program and Processing Logic}
+\placeholder{Insert the Flink program, configuration, processing logic,
+and explanation of the operators or windows used.}
+
+\subsection{Results and Alert Summary}
+\begin{table}[H]
+\centering
+\caption{Sample Patient Stream-Processing Results}
+\begin{tabularx}{\textwidth}{|l|l|c|c|c|X|}
+\hline
+\textbf{Device/ID} & \textbf{Timestamp} & \textbf{Heart Rate} &
+\textbf{SpO$_2$} & \textbf{Temperature} & \textbf{Status}\\
+\hline
+[ID 1] & [Time] & [Value] & [Value] & [Value] & [Normal / Flagged]\\
+\hline
+[ID 2] & [Time] & [Value] & [Value] & [Value] & [Normal / Flagged]\\
+\hline
+[ID 3] & [Time] & [Value] & [Value] & [Value] & [Normal / Flagged]\\
+\hline
+\end{tabularx}
+\end{table}
+
+\noindent\textbf{Important note:} This activity uses synthetic patient data
+and educational thresholds. The prototype is intended only to demonstrate
+stream processing and must not be treated as a clinical diagnostic tool.
+
+\placeholder{Insert screenshots of the input stream, Flink execution,
+flagged readings, alerts, and time-window summaries. Interpret the results.}
+
+% ---------------- Activity 4 ----------------
+\clearpage
+\activityheading{4}{MongoDB -- E-Commerce Product Catalog}
+
+\subsection{Problem Statement}
+An e-commerce company manages millions of product records containing
+different attributes, including product names, prices, brands,
+specifications, ratings, and availability. It needs a flexible database
+to manage and retrieve product information efficiently.
+
+\subsection{Self-Learning and Implementation Tasks}
+\begin{enumerate}
+    \item Study MongoDB document storage, collections, indexing, and CRUD operations.
+    \item Design a product catalog using JSON-like documents.
+    \item Implement product insertion, category and price-range searches,
+    stock updates, and deletion of discontinued products.
+    \item Compare the flexibility of the document model with a relational database.
+\end{enumerate}
+
+\subsection{Document Structure and Collection Design}
+\placeholder{Explain the product document structure, collection name,
+fields, data types, and sample JSON-like documents.}
+
+\subsection{Implementation Procedure}
+\begin{enumerate}
+    \item Create or connect to the MongoDB database.
+    \item Create the product collection and insert sample product documents.
+    \item Implement product retrieval and category/price-range searches.
+    \item Update stock or availability details.
+    \item Delete discontinued products.
+    \item Create indexes where appropriate and observe query performance.
+\end{enumerate}
+
+\subsection{CRUD Queries and Outputs}
+\placeholder{Insert MongoDB commands or application code for Create,
+Read, Update, and Delete operations. Include category searches,
+price-range queries, and stock updates.}
+
+\subsection{Indexing and Query Performance}
+\placeholder{Describe the indexes created, queries evaluated, and
+observations about query performance. Do not report performance
+improvements unless they were measured.}
+
+\subsection{Document Database and Relational Database Comparison}
+\begin{table}[H]
+\centering
+\caption{Comparison of MongoDB Document Model and Relational Database}
+\begin{tabularx}{\textwidth}{|l|X|X|}
+\hline
+\textbf{Aspect} & \textbf{MongoDB} & \textbf{Relational Database}\\
+\hline
+Data Model & Document-oriented & Table-oriented\\
+\hline
+Schema & [Observation from implementation] & [Observation]\\
+\hline
+Representation of Product Attributes & [Observation] & [Observation]\\
+\hline
+Query Approach & [Observation] & [Observation]\\
+\hline
+Flexibility & [Observation] & [Observation]\\
+\hline
+\end{tabularx}
+\end{table}
+
+\subsection{Results and Observations}
+\placeholder{Insert screenshots of database/collection creation,
+document insertion, retrieval, updates, deletion, indexes, and query
+outputs. Summarize the observations.}
+
+% ---------------- Activity 5 ----------------
+\clearpage
+\activityheading{5}{Cloud-Based Big Data Analytics -- Application Log Analysis}
+
+\subsection{Problem Statement}
+An online service provider generates gigabytes of application and
+web-server logs daily. The operations team wants to identify frequent
+errors, analyze request patterns, detect unusual spikes in failed
+requests, and estimate peak usage periods without maintaining
+large-scale infrastructure.
+
+\subsection{Self-Learning and Implementation Tasks}
+\begin{enumerate}
+    \item Explore a cloud-based Big Data platform.
+    \item Select suitable managed storage and analytics services.
+    \item Upload a sample server-log dataset and analyze error frequencies,
+    request volumes, and time-based usage patterns.
+    \item Document the architecture, processing workflow, findings, and
+    estimated resource costs.
+\end{enumerate}
+
+\subsection{Selected Cloud Platform and Services}
+\placeholder{Select and identify the platform used: AWS, Microsoft Azure,
+or Google Cloud. List the exact storage and analytics services used.
+If cloud access is unavailable, describe the local simulation or free-tier
+approach adopted.}
+
+\begin{table}[H]
+\centering
+\caption{Selected Cloud Services}
+\begin{tabularx}{\textwidth}{|l|X|}
+\hline
+\textbf{Item} & \textbf{Details}\\
+\hline
+Cloud Platform & [AWS / Microsoft Azure / Google Cloud]\\
+\hline
+Storage Service & [Selected service]\\
+\hline
+Analytics / Query Service & [Selected service]\\
+\hline
+Visualization Service / Tool & [Selected service or tool]\\
+\hline
+Dataset & [Sample log dataset and source]\\
+\hline
+\end{tabularx}
+\end{table}
+
+\subsection{Dataset and Log Format}
+\placeholder{Describe the sample server-log dataset, its format, fields,
+size, source, and any preprocessing performed.}
+
+\subsection{Architecture and Processing Workflow}
+\placeholder{Explain the data flow from log upload/collection to storage,
+querying, analysis, and visualization. Insert the architecture diagram
+if available.}
+
+\begin{figure}[H]
+    \centering
+    \fbox{\parbox[c][5cm][c]{0.85\textwidth}{\centering
+    Insert Cloud-Based Log Analytics Workflow Diagram}}
+    \caption{Cloud-Based Big Data Log Analytics Workflow}
+    \label{fig:cloud_log_workflow}
+\end{figure}
+
+\subsection{Implementation Procedure}
+\begin{enumerate}
+    \item Select and configure the cloud platform or local simulation.
+    \item Create or configure the required storage resource.
+    \item Upload or access the sample application/web-server logs.
+    \item Configure the analytics service and execute the required queries.
+    \item Analyze error frequencies, request volumes, failed-request spikes,
+    and time-based usage patterns.
+    \item Generate visualizations and document estimated resource costs.
+\end{enumerate}
+
+\subsection{Queries, Analysis, and Visualizations}
+\placeholder{Insert the queries, scripts, or processing steps used.
+Include output tables or visualizations for frequent errors, request
+volumes, failed requests, and peak usage periods.}
+
+\subsection{Cost Considerations}
+\placeholder{Document the services and resource usage considered,
+estimated costs if available, and whether a free tier or local simulation
+was used. Do not include credentials, access keys, or confidential
+account information.}
+
+\subsection{Results and Observations}
+\placeholder{Insert screenshots of storage, dataset upload, analytics
+queries, outputs, and visualizations. Interpret the findings and explain
+how they could help the operations team.}
+
+% =========================================================
+% CHAPTER 5 - OVERALL ANALYSIS
+% =========================================================
+\clearpage
+\chapter{OVERALL ANALYSIS AND DISCUSSION}
+
+\section{Summary of Activity Outcomes}
+\begin{table}[H]
+\centering
+\caption{Summary of Technology Implementation Outcomes}
+\begin{tabularx}{\textwidth}{|l|X|X|}
+\hline
+\textbf{Technology} & \textbf{Implementation Output} & \textbf{Key Observation}\\
+\hline
+Apache Hive & Sales analysis queries and report & [Observation]\\
+\hline
+Apache Kafka & Producer-consumer prototype and traffic alerts & [Observation]\\
+\hline
+Apache Flink & Stream-processing prototype and alert summaries & [Observation]\\
+\hline
+MongoDB & Product catalog with CRUD operations and queries & [Observation]\\
+\hline
+Cloud Analytics & Log analytics prototype/report and visualizations & [Observation]\\
+\hline
+\end{tabularx}
+\end{table}
+
+\section{Comparative Discussion}
+\placeholder{Compare the roles of the five technologies. Discuss the
+differences between data warehousing, event streaming, stream processing,
+document databases, and cloud-based analytics based on the activities
+performed.}
+
+\section{Limitations}
+\begin{itemize}
+    \item [Mention dataset size or availability limitations.]
+    \item [Mention configuration, hardware, or cloud-access limitations.]
+    \item [Mention simulation assumptions and threshold limitations.]
+    \item [Mention any implementation features not completed.]
+\end{itemize}
+
+% =========================================================
+% CHAPTER 6 - CONCLUSION AND FUTURE WORK
+% =========================================================
+\chapter{CONCLUSION AND FUTURE WORK}
+
+\section{Conclusion}
+\placeholder{Summarize the five activities, technologies studied,
+implementations completed, results obtained, and the overall learning
+outcomes. Ensure that the conclusion reflects the actual work performed.}
+
+\section{Future Work}
+\begin{itemize}
+    \item Extend the Hive analysis using larger and more varied sales datasets.
+    \item Enhance Kafka traffic monitoring with additional sensor sources and
+    more detailed event-processing logic.
+    \item Explore more advanced Flink windowing and event-time processing.
+    \item Extend the MongoDB product catalog with additional search and
+    indexing strategies.
+    \item Explore additional cloud analytics capabilities and dashboards,
+    while monitoring resource usage and cost.
+\end{itemize}
+
+% =========================================================
+% REFERENCES
+% =========================================================
+\clearpage
+\addcontentsline{toc}{chapter}{References}
+\begin{thebibliography}{99}
+
+\bibitem{hive}
+Apache Software Foundation, ``Apache Hive Documentation,''
+\url{https://hive.apache.org/}.
+
+\bibitem{kafka}
+Apache Software Foundation, ``Apache Kafka Documentation,''
+\url{https://kafka.apache.org/documentation/}.
+
+\bibitem{flink}
+Apache Software Foundation, ``Apache Flink Documentation,''
+\url{https://flink.apache.org/}.
+
+\bibitem{mongodb}
+MongoDB, ``MongoDB Documentation,''
+\url{https://www.mongodb.com/docs/}.
+
+\bibitem{aws}
+Amazon Web Services, ``AWS Documentation,''
+\url{https://docs.aws.amazon.com/}.
+
+\bibitem{azure}
+Microsoft, ``Microsoft Azure Documentation,''
+\url{https://learn.microsoft.com/azure/}.
+
+\bibitem{gcp}
+Google Cloud, ``Google Cloud Documentation,''
+\url{https://cloud.google.com/docs}.
+
+\bibitem{other}
+[Add textbooks, research papers, articles, datasets, and other resources
+actually referred to during the work.]
+
+\end{thebibliography}
+
+% =========================================================
+% APPENDIX A - ASSESSMENT RUBRIC
+% =========================================================
+\appendix
+\chapter{COMMON ASSESSMENT RUBRIC}
+
+The activities are evaluated using the common assessment rubric below.
+Each of the five activities carries 4 marks, for a total of 20 marks.
+
+\begin{table}[H]
+\centering
+\caption{Common Assessment Rubric}
+\begin{tabularx}{\textwidth}{|c|X|c|c|}
+\hline
+\textbf{Sl. No.} & \textbf{Evaluation Criterion} &
+\textbf{Marks per Activity} & \textbf{Total for 5 Activities}\\
+\hline
+1 & Understanding of the problem and technology & 1 & 5\\
+\hline
+2 & Solution design and implementation & 1.5 & 7.5\\
+\hline
+3 & Results, analysis, and interpretation & 1 & 5\\
+\hline
+4 & Documentation and conclusions & 0.5 & 2.5\\
+\hline
+\multicolumn{2}{|r|}{\textbf{TOTAL}} & \textbf{4} & \textbf{20}\\
+\hline
+\end{tabularx}
+\end{table}
+
+% =========================================================
+% APPENDIX B - SUBMISSION REQUIREMENTS
+% =========================================================
+\chapter{REPORT SUBMISSION REQUIREMENTS}
+
+The final consolidated report should include the following components
+for the activities, as applicable.
+
+\begin{longtable}{|c|p{3.3cm}|p{8.0cm}|}
+\caption{Mandatory Report Components}\\
+\hline
+\textbf{Sl. No.} & \textbf{Component} & \textbf{Description}\\
+\hline
+\endfirsthead
+\hline
+\textbf{Sl. No.} & \textbf{Component} & \textbf{Description}\\
+\hline
+\endhead
+1 & Problem Definition & Clearly explain the real-world problem and objectives.\\
+\hline
+2 & Technology Study & Describe the selected technology, architecture, and relevant concepts.\\
+\hline
+3 & Implementation & Include the procedure, queries or code, and configuration details as applicable.\\
+\hline
+4 & Results & Provide screenshots, sample outputs, tables, or visualizations.\\
+\hline
+5 & Analysis & Interpret the results and explain how the solution addresses the problem.\\
+\hline
+6 & Conclusion & Summarize findings, limitations, and possible improvements.\\
+\hline
+\end{longtable}
+
+\section*{Final Submission Checklist}
+\addcontentsline{toc}{section}{Final Submission Checklist}
+\begin{itemize}
+    \item[$\square$] Problem definition and objectives included for all five activities.
+    \item[$\square$] Technology architecture and concepts explained.
+    \item[$\square$] Implementation procedures, queries, code, and configurations included.
+    \item[$\square$] Screenshots, sample outputs, tables, and visualizations included.
+    \item[$\square$] Results analyzed and interpreted.
+    \item[$\square$] Limitations and conclusions documented.
+    \item[$\square$] References and dataset sources listed.
+    \item[$\square$] Cloud costs or local/free-tier simulation details documented, where applicable.
+    \item[$\square$] Synthetic patient data and educational-only limitation clearly stated for the Flink activity.
+\end{itemize}
+
+\end{document}

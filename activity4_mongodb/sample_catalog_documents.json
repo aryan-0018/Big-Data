@@ -1,0 +1,100 @@
+[
+  {
+    "sku": "SKU-ELE-100001",
+    "category": "Electronics",
+    "brand": "Apple",
+    "is_active": true,
+    "is_discontinued": false,
+    "created_at": "2025-05-08 00:00:00",
+    "rating": {
+      "average": 3.6,
+      "review_count": 844
+    },
+    "stock_quantity": 139,
+    "warehouse_location": "WH-BOM-01",
+    "tags": [
+      "smartwatch",
+      "apple",
+      "gadgets",
+      "5g",
+      "electronics"
+    ],
+    "title": "Apple Smartwatch Pro 11",
+    "sub_category": "Smartwatch",
+    "price": 68115.6,
+    "cost_price": 53130.17,
+    "specifications": {
+      "processor": "Intel Core i7",
+      "ram_gb": 16,
+      "storage_gb": 256,
+      "battery_capacity_mah": 4500,
+      "screen_size_inches": 16.0,
+      "warranty_months": 12
+    }
+  },
+  {
+    "sku": "SKU-GRO-100002",
+    "category": "Groceries",
+    "brand": "Kellogg's",
+    "is_active": true,
+    "is_discontinued": false,
+    "created_at": "2025-04-15 00:00:00",
+    "rating": {
+      "average": 4.2,
+      "review_count": 58
+    },
+    "stock_quantity": 40,
+    "warehouse_location": "WH-HYD-03",
+    "tags": [
+      "grocery",
+      "green-teas",
+      "organic",
+      "food"
+    ],
+    "title": "Kellogg's Premium Green Teas",
+    "sub_category": "Green Teas",
+    "price": 599.17,
+    "cost_price": 389.46,
+    "specifications": {
+      "net_weight_grams": 500,
+      "is_organic_certified": false,
+      "shelf_life_months": 6,
+      "dietary_flags": [
+        "Sugar-Free"
+      ]
+    }
+  },
+  {
+    "sku": "SKU-ELE-100003",
+    "category": "Electronics",
+    "brand": "Asus",
+    "is_active": true,
+    "is_discontinued": false,
+    "created_at": "2025-06-20 00:00:00",
+    "rating": {
+      "average": 3.6,
+      "review_count": 360
+    },
+    "stock_quantity": 117,
+    "warehouse_location": "WH-BOM-01",
+    "tags": [
+      "tablet",
+      "asus",
+      "gadgets",
+      "5g",
+      "electronics"
+    ],
+    "title": "Asus Tablet Pro 13",
+    "sub_category": "Tablet",
+    "price": 22480.43,
+    "cost_price": 17534.74,
+    "specifications": {
+      "processor": "Snapdragon 8 Gen 3",
+      "ram_gb": 16,
+      "storage_gb": 1024,
+      "battery_capacity_mah": 4500,
+      "screen_size_inches": 6.1,
+      "warranty_months": 36
+    }
+  }
+]

@@ -1,0 +1,31 @@
+product_name,category,avg_daily_demand,std_daily_demand,peak_daily_demand,supplier_lead_time_days,safety_stock_units,reorder_point_units,inventory_recommendation
+Red Onions 1kg,Fresh Produce,5.87,3.79,20.0,3,10.8,28.4,High Volatility - Buffer High
+Organic Milk 1L,Dairy & Breakfast,5.82,3.64,18.0,3,10.4,27.9,High Volatility - Buffer High
+Salted Butter 500g,Dairy & Breakfast,5.82,4.01,30.0,3,11.5,28.9,High Volatility - Buffer High
+Green Tea Bags 50s,Beverages,5.76,3.69,23.0,3,10.5,27.8,High Volatility - Buffer High
+Shimla Apples 1kg,Fresh Produce,5.76,3.85,21.0,3,11.0,28.3,High Volatility - Buffer High
+Eggs Pack of 12,Dairy & Breakfast,5.76,4.02,26.0,3,11.5,28.8,High Volatility - Buffer High
+Bamboo Paper Towels 2pk,Household & Hygiene,5.67,3.79,21.0,3,10.8,27.8,High Volatility - Buffer High
+Sparkling Mineral Water 750ml,Beverages,5.67,3.76,23.0,3,10.7,27.8,High Volatility - Buffer High
+Fluoride Free Toothpaste 150g,Personal Care,5.62,3.89,23.0,3,11.1,28.0,High Volatility - Buffer High
+Organic Sunscreen SPF50 100ml,Personal Care,5.61,3.78,21.0,3,10.8,27.6,High Volatility - Buffer High
+Dark Chocolate 100g,Packaged Foods & Snacks,5.6,3.72,18.0,3,10.6,27.4,High Volatility - Buffer High
+Baby Spinach 250g,Fresh Produce,5.57,3.62,17.0,3,10.3,27.1,High Volatility - Buffer High
+Whole Wheat Pasta 500g,Packaged Foods & Snacks,5.52,3.64,22.0,3,10.4,27.0,High Volatility - Buffer High
+Floor Cleaner Lemon 1L,Household & Hygiene,5.52,3.82,22.0,3,10.9,27.5,High Volatility - Buffer High
+Herbal Shampoo 340ml,Personal Care,5.52,3.67,20.0,3,10.5,27.0,High Volatility - Buffer High
+Roasted Almonds 250g,Packaged Foods & Snacks,5.51,3.66,17.0,3,10.5,27.0,High Volatility - Buffer High
+Cold Pressed Orange Juice 1L,Beverages,5.5,3.88,27.0,3,11.1,27.6,High Volatility - Buffer High
+Cavendish Bananas 1kg,Fresh Produce,5.48,3.36,20.0,3,9.6,26.0,High Volatility - Buffer High
+Laundry Detergent Liquid 2L,Household & Hygiene,5.48,3.82,22.0,3,10.9,27.4,High Volatility - Buffer High
+Farm Fresh Tomatoes 1kg,Fresh Produce,5.47,3.89,22.0,3,11.1,27.5,High Volatility - Buffer High
+Greek Yogurt 400g,Dairy & Breakfast,5.46,3.83,23.0,3,10.9,27.3,High Volatility - Buffer High
+Aloe Vera Body Wash 400ml,Personal Care,5.45,3.55,18.0,3,10.1,26.5,High Volatility - Buffer High
+Eco Dishwash Gel 750ml,Household & Hygiene,5.43,3.64,19.0,3,10.4,26.7,High Volatility - Buffer High
+Arabica Coffee Beans 250g,Beverages,5.4,3.41,18.0,3,9.7,25.9,High Volatility - Buffer High
+Hydrating Face Moisturizer 50g,Personal Care,5.35,3.68,19.0,3,10.5,26.6,High Volatility - Buffer High
+Multigrain Bread 400g,Dairy & Breakfast,5.34,3.68,21.0,3,10.5,26.5,High Volatility - Buffer High
+Oat Milk 1L,Beverages,5.28,3.47,17.0,3,9.9,25.8,High Volatility - Buffer High
+Digestive Biscuits 300g,Packaged Foods & Snacks,5.25,3.65,23.0,3,10.4,26.2,High Volatility - Buffer High
+Biodegradable Trash Bags 30s,Household & Hygiene,5.16,3.58,18.0,3,10.2,25.7,High Volatility - Buffer High
+Extra Virgin Olive Oil 1L,Packaged Foods & Snacks,5.11,3.54,18.0,3,10.1,25.4,High Volatility - Buffer High

@@ -1,0 +1,9 @@
+branch_id,branch_name,city,region,total_transactions,total_units_sold,total_revenue,total_profit,profit_margin_pct
+BR-102,Indiranagar Galleria,Bengaluru,South,3197,7025.0,1395743.0,299486.0,21.46
+BR-101,Metro Central,Bengaluru,South,3142,6883.0,1377268.4,295955.4,21.49
+BR-104,Bandra Arcade,Mumbai,West,3156,6864.0,1375613.25,296415.25,21.55
+BR-108,Hitech City Mart,Hyderabad,South,3152,6799.0,1348950.5,289212.5,21.44
+BR-103,Whitefield Hub,Bengaluru,South,3062,6731.0,1333578.2,290919.2,21.81
+BR-106,Connaught Place Super,Delhi,North,3092,6708.0,1329061.8,286942.8,21.59
+BR-105,Andheri MegaStore,Mumbai,West,3142,6822.0,1327406.55,288644.55,21.74
+BR-107,Gurugram CyberHub,Delhi NCR,North,3057,6609.0,1318692.2,281237.2,21.33

@@ -1,0 +1,4 @@
+patient_id,patient_name,ward,CRITICAL_RED,URGENT_YELLOW,TOTAL
+PT-02,Sunita Patil,ICU-A,37,9,46
+PT-03,David Miller,ICU-B,18,14,32
+PT-07,Karthik Verma,CCU,5,3,8

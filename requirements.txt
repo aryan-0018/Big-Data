@@ -1,0 +1,17 @@
+# Core Big Data and Data Science Dependencies
+pandas>=2.0.0
+numpy>=1.24.0
+matplotlib>=3.7.0
+seaborn>=0.12.0
+pyarrow>=14.0.0
+
+# Document and PDF Generation
+python-docx>=1.1.0
+PyMuPDF>=1.23.0
+Pillow>=10.0.0
+pywin32>=306
+
+# Database and Stream Processing Clients
+pymongo>=4.6.0
+kafka-python>=2.0.2
+apache-flink>=1.18.0

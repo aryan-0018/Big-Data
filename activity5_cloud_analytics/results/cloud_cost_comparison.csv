@@ -1,0 +1,4 @@
+Architecture,Storage_Cost_USD,Compute_Query_Cost_USD,Total_Monthly_Cost_USD,Data_Scanned_Per_Query_GB,Management_Overhead
+On-Premises Dedicated Cluster,750.0,450.0,1200.0,3072.0,"High (Physical hardware, OS patching, disk failures)"
+AWS Athena (Raw CSV on S3),70.66,6750.0,6822.66,1536.0,Zero Infrastructure (Unoptimized scan cost)
+AWS Athena (Parquet + Snappy),14.13,324.0,340.13,73.7,Zero Serverless (85%+ cost reduction over On-Prem!)
