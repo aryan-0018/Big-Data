@@ -33,7 +33,28 @@ ENV/
 env.bak/
 venv.bak/
 
-# Microsoft Office temporary lock files
+# Testing and coverage
+.pytest_cache/
+.tox/
+.nox/
+.coverage
+.coverage.*
+htmlcov/
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Microsoft Office temporary lock and cache files
+~$*
 ~$*.docx
 ~$*.doc
 ~$*.pptx
@@ -49,6 +70,7 @@ venv.bak/
 ehthumbs.db
 Thumbs.db
 [Dd]esktop.ini
+$RECYCLE.BIN/
 
 # IDE and Editor configurations
 .idea/
@@ -56,6 +78,8 @@ Thumbs.db
 *.swp
 *.swo
 *~
+*.bak
+*.orig
 
 # Logs and transient run data
 *.log
@@ -64,6 +88,7 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 
-# Antigravity / AI scratch folders
+# AI Assistant and Scratch files
 scratch/
 .system_generated/
+.gemini/
